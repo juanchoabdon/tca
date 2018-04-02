@@ -1,0 +1,144 @@
++--------+----------+----------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+------------+
+| Domain | Method   | URI                                    | Name                              | Action                                                                        | Middleware |
++--------+----------+----------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+------------+
+|        | GET|HEAD | /                                      |                                   | App\Http\Controllers\IndexController@index                                    |            |
+|        | GET|HEAD | about-us                               |                                   | App\Http\Controllers\IndexController@aboutus_page                             |            |
+|        | GET|HEAD | admin                                  |                                   | App\Http\Controllers\Admin\IndexController@index                              |            |
+|        | POST     | admin/about_us                         |                                   | App\Http\Controllers\Admin\SettingsController@about_us_page                   | auth       |
+|        | POST     | admin/addthisdisqus                    |                                   | App\Http\Controllers\Admin\SettingsController@addthisdisqus                   | auth       |
+|        | GET|HEAD | admin/blog                             |                                   | App\Http\Controllers\Admin\BlogController@index                               |            |
+|        | POST     | admin/blog/addblogs                    |                                   | App\Http\Controllers\Admin\BlogController@store                               |            |
+|        | GET|HEAD | admin/blog/addblogs                    |                                   | App\Http\Controllers\Admin\BlogController@create                              |            |
+|        | GET|HEAD | admin/blog/edit/{id}                   |                                   | App\Http\Controllers\Admin\BlogController@edit                                |            |
+|        | POST     | admin/careers_with_us                  |                                   | App\Http\Controllers\Admin\SettingsController@careers_with_us_page            | auth       |
+|        | GET|HEAD | admin/cities                           |                                   | App\Http\Controllers\Admin\CityController@citylist                            | auth       |
+|        | GET|HEAD | admin/cities/addcity                   |                                   | App\Http\Controllers\Admin\CityController@addeditcity                         | auth       |
+|        | POST     | admin/cities/addcity                   |                                   | App\Http\Controllers\Admin\CityController@addnew                              | auth       |
+|        | GET|HEAD | admin/cities/addcity/{id}              |                                   | App\Http\Controllers\Admin\CityController@editcity                            | auth       |
+|        | GET|HEAD | admin/cities/delete/{id}               |                                   | App\Http\Controllers\Admin\CityController@delete                              | auth       |
+|        | GET|HEAD | admin/cities/status/{id}               |                                   | App\Http\Controllers\Admin\CityController@status                              | auth       |
+|        | GET|HEAD | admin/conversations                    |                                   | App\Http\Controllers\Admin\ConversationController@index                       |            |
+|        | POST     | admin/conversations/add                |                                   | App\Http\Controllers\Admin\ConversationController@store                       |            |
+|        | GET|HEAD | admin/conversations/add                |                                   | App\Http\Controllers\Admin\ConversationController@add                         |            |
+|        | GET|HEAD | admin/conversations/delete/{id}        |                                   | App\Http\Controllers\Admin\ConversationController@delete                      |            |
+|        | GET|HEAD | admin/conversations/edit/{id}          |                                   | App\Http\Controllers\Admin\ConversationController@edit                        |            |
+|        | GET|HEAD | admin/conversations/inscribed/{id}     |                                   | App\Http\Controllers\Admin\ConversationController@inscribed                   |            |
+|        | GET|HEAD | admin/dashboard                        |                                   | App\Http\Controllers\Admin\DashboardController@index                          | auth       |
+|        | GET|HEAD | admin/featuredproperties               |                                   | App\Http\Controllers\Admin\FeaturedPropertiesController@propertieslist        | auth       |
+|        | POST     | admin/headfootupdate                   |                                   | App\Http\Controllers\Admin\SettingsController@headfootupdate                  | auth       |
+|        | GET|HEAD | admin/inquiries                        |                                   | App\Http\Controllers\Admin\InquiriesController@inquirieslist                  | auth       |
+|        | GET|HEAD | admin/inquiries/delete/{id}            |                                   | App\Http\Controllers\Admin\InquiriesController@delete                         | auth       |
+|        | POST     | admin/login                            |                                   | App\Http\Controllers\Admin\IndexController@postLogin                          |            |
+|        | GET|HEAD | admin/logout                           |                                   | App\Http\Controllers\Admin\IndexController@logout                             |            |
+|        | GET|HEAD | admin/partners                         |                                   | App\Http\Controllers\Admin\PartnersController@partnerslist                    | auth       |
+|        | POST     | admin/partners/addpartners             |                                   | App\Http\Controllers\Admin\PartnersController@addnew                          | auth       |
+|        | GET|HEAD | admin/partners/addpartners             |                                   | App\Http\Controllers\Admin\PartnersController@addpartners                     | auth       |
+|        | GET|HEAD | admin/partners/addpartners/{id}        |                                   | App\Http\Controllers\Admin\PartnersController@editpartners                    | auth       |
+|        | GET|HEAD | admin/partners/delete/{id}             |                                   | App\Http\Controllers\Admin\PartnersController@delete                          | auth       |
+|        | POST     | admin/password/email                   |                                   | App\Http\Controllers\Auth\PasswordController@postEmail                        | guest      |
+|        | GET|HEAD | admin/password/email                   |                                   | App\Http\Controllers\Auth\PasswordController@getEmail                         | guest      |
+|        | POST     | admin/password/reset                   |                                   | App\Http\Controllers\Auth\PasswordController@postReset                        | guest      |
+|        | GET|HEAD | admin/password/reset/{token}           |                                   | App\Http\Controllers\Auth\PasswordController@getReset                         | guest      |
+|        | POST     | admin/privacy_policy                   |                                   | App\Http\Controllers\Admin\SettingsController@privacy_policy_page             | auth       |
+|        | POST     | admin/profile                          |                                   | App\Http\Controllers\Admin\AdminController@updateProfile                      | auth       |
+|        | GET|HEAD | admin/profile                          |                                   | App\Http\Controllers\Admin\AdminController@profile                            | auth       |
+|        | POST     | admin/profile_pass                     |                                   | App\Http\Controllers\Admin\AdminController@updatePassword                     | auth       |
+|        | GET|HEAD | admin/properties                       |                                   | App\Http\Controllers\Admin\PropertiesController@propertieslist                | auth       |
+|        | GET|HEAD | admin/properties/addproperty           |                                   | App\Http\Controllers\Admin\PropertiesController@addeditproperty               | auth       |
+|        | POST     | admin/properties/addproperty           |                                   | App\Http\Controllers\Admin\PropertiesController@addnew                        | auth       |
+|        | GET|HEAD | admin/properties/addproperty/{id}      |                                   | App\Http\Controllers\Admin\PropertiesController@editproperty                  | auth       |
+|        | GET|HEAD | admin/properties/delete/{id}           |                                   | App\Http\Controllers\Admin\PropertiesController@delete                        | auth       |
+|        | GET|HEAD | admin/properties/featuredproperty/{id} |                                   | App\Http\Controllers\Admin\PropertiesController@featuredproperty              | auth       |
+|        | GET|HEAD | admin/properties/status/{id}           |                                   | App\Http\Controllers\Admin\PropertiesController@status                        | auth       |
+|        | POST     | admin/settings                         |                                   | App\Http\Controllers\Admin\SettingsController@settingsUpdates                 | auth       |
+|        | GET|HEAD | admin/settings                         |                                   | App\Http\Controllers\Admin\SettingsController@settings                        | auth       |
+|        | GET|HEAD | admin/slider                           |                                   | App\Http\Controllers\Admin\SliderController@sliderlist                        | auth       |
+|        | POST     | admin/slider/addslide                  |                                   | App\Http\Controllers\Admin\SliderController@addnew                            | auth       |
+|        | GET|HEAD | admin/slider/addslide                  |                                   | App\Http\Controllers\Admin\SliderController@addeditSlide                      | auth       |
+|        | GET|HEAD | admin/slider/addslide/{id}             |                                   | App\Http\Controllers\Admin\SliderController@editSlide                         | auth       |
+|        | GET|HEAD | admin/slider/delete/{id}               |                                   | App\Http\Controllers\Admin\SliderController@delete                            | auth       |
+|        | POST     | admin/social_links                     |                                   | App\Http\Controllers\Admin\SettingsController@social_links_update             | auth       |
+|        | GET|HEAD | admin/subscriber                       |                                   | App\Http\Controllers\Admin\SubscriberController@subscriberlist                | auth       |
+|        | GET|HEAD | admin/subscriber/delete/{id}           |                                   | App\Http\Controllers\Admin\SubscriberController@delete                        | auth       |
+|        | POST     | admin/subscription/add                 |                                   | App\Http\Controllers\Admin\SubscriptionController@store                       |            |
+|        | GET|HEAD | admin/subscription/add                 |                                   | App\Http\Controllers\Admin\SubscriptionController@add                         |            |
+|        | GET|HEAD | admin/subscription/edit/{id}           |                                   | App\Http\Controllers\Admin\SubscriptionController@edit                        |            |
+|        | POST     | admin/subscription/update/{id}         |                                   | App\Http\Controllers\Admin\SubscriptionController@update                      |            |
+|        | GET|HEAD | admin/subscriptions                    |                                   | App\Http\Controllers\Admin\SubscriptionController@index                       |            |
+|        | POST     | admin/terms_conditions                 |                                   | App\Http\Controllers\Admin\SettingsController@terms_conditions_page           | auth       |
+|        | GET|HEAD | admin/testimonials                     |                                   | App\Http\Controllers\Admin\TestimonialsController@testimonialslist            | auth       |
+|        | GET|HEAD | admin/testimonials/addtestimonial      |                                   | App\Http\Controllers\Admin\TestimonialsController@addeditestimonials          | auth       |
+|        | POST     | admin/testimonials/addtestimonial      |                                   | App\Http\Controllers\Admin\TestimonialsController@addnew                      | auth       |
+|        | GET|HEAD | admin/testimonials/addtestimonial/{id} |                                   | App\Http\Controllers\Admin\TestimonialsController@edittestimonial             | auth       |
+|        | GET|HEAD | admin/testimonials/delete/{id}         |                                   | App\Http\Controllers\Admin\TestimonialsController@delete                      | auth       |
+|        | GET|HEAD | admin/training                         |                                   | App\Http\Controllers\Admin\TrainingController@index                           |            |
+|        | POST     | admin/training/add                     |                                   | App\Http\Controllers\Admin\TrainingController@store                           |            |
+|        | GET|HEAD | admin/training/add                     |                                   | App\Http\Controllers\Admin\TrainingController@add                             |            |
+|        | GET|HEAD | admin/training/content/add/{id}        |                                   | App\Http\Controllers\Admin\TrainingController@addcontent                      |            |
+|        | POST     | admin/training/content/add/{id}        |                                   | App\Http\Controllers\Admin\TrainingController@storecontent                    |            |
+|        | GET|HEAD | admin/training/content/edit/{id}       |                                   | App\Http\Controllers\Admin\TrainingController@editcontent                     |            |
+|        | GET|HEAD | admin/training/edit/{id}               |                                   | App\Http\Controllers\Admin\TrainingController@edit                            |            |
+|        | GET|HEAD | admin/training/streaming/{id}          |                                   | App\Http\Controllers\Admin\TrainingController@streaming                       |            |
+|        | GET|HEAD | admin/training/{id}                    |                                   | App\Http\Controllers\Admin\TrainingController@content                         |            |
+|        | GET|HEAD | admin/transacciones                    |                                   | App\Http\Controllers\Admin\UsersController@transacciones                      | auth       |
+|        | GET|HEAD | admin/transacciones/delete/{id}        |                                   | App\Http\Controllers\Admin\UsersController@deletetransaccion                  | auth       |
+|        | GET|HEAD | admin/types                            |                                   | App\Http\Controllers\Admin\TypesController@typeslist                          | auth       |
+|        | GET|HEAD | admin/types/addtypes                   |                                   | App\Http\Controllers\Admin\TypesController@addedittypes                       | auth       |
+|        | POST     | admin/types/addtypes                   |                                   | App\Http\Controllers\Admin\TypesController@addnew                             | auth       |
+|        | GET|HEAD | admin/types/addtypes/{id}              |                                   | App\Http\Controllers\Admin\TypesController@edittypes                          | auth       |
+|        | GET|HEAD | admin/types/delete/{id}                |                                   | App\Http\Controllers\Admin\TypesController@delete                             | auth       |
+|        | GET|HEAD | admin/users                            |                                   | App\Http\Controllers\Admin\UsersController@userslist                          | auth       |
+|        | POST     | admin/users/addcsv                     |                                   | App\Http\Controllers\Admin\UsersController@addcsv                             | auth       |
+|        | GET|HEAD | admin/users/addcsv                     |                                   | App\Http\Controllers\Admin\UsersController@viewcsv                            | auth       |
+|        | POST     | admin/users/adduser                    |                                   | App\Http\Controllers\Admin\UsersController@addnew                             | auth       |
+|        | GET|HEAD | admin/users/adduser                    |                                   | App\Http\Controllers\Admin\UsersController@addeditUser                        | auth       |
+|        | GET|HEAD | admin/users/adduser/{id}               |                                   | App\Http\Controllers\Admin\UsersController@editUser                           | auth       |
+|        | GET|HEAD | admin/users/delete/{id}                |                                   | App\Http\Controllers\Admin\UsersController@delete                             | auth       |
+|        | GET|HEAD | agents                                 |                                   | App\Http\Controllers\AgentsController@index                                   |            |
+|        | POST     | agentscontact                          |                                   | App\Http\Controllers\PropertiesController@agentscontact                       |            |
+|        | GET|HEAD | api                                    |                                   | App\Http\Controllers\StoreController@EstadoTransacciones                      |            |
+|        | GET|HEAD | app                                    |                                   | App\Http\Controllers\App\IndexController@index                                |            |
+|        | GET|HEAD | app/dashboard                          |                                   | App\Http\Controllers\App\IndexController@dashboard                            |            |
+|        | GET|HEAD | auth/confirm/{code}                    |                                   | App\Http\Controllers\IndexController@confirm                                  |            |
+|        | GET|HEAD | blog/{id}                              |                                   | App\Http\Controllers\IndexController@article                                  |            |
+|        | GET|HEAD | blogs                                  |                                   | App\Http\Controllers\IndexController@blog                                     |            |
+|        | GET|HEAD | builders                               |                                   | App\Http\Controllers\AgentsController@builder_list                            |            |
+|        | GET|HEAD | cache                                  |                                   | Closure                                                                       |            |
+|        | GET|HEAD | careers-with-us                        |                                   | App\Http\Controllers\IndexController@careers_with_page                        |            |
+|        | GET|HEAD | contact-us                             |                                   | App\Http\Controllers\IndexController@contact_us_page                          |            |
+|        | POST     | contact-us                             |                                   | App\Http\Controllers\IndexController@contact_us_sendemail                     |            |
+|        | GET|HEAD | conversation-cancel/{id}               |                                   | App\Http\Controllers\IndexController@conversationsuscribecancel               |            |
+|        | GET|HEAD | conversation-suscribe/{id}             |                                   | App\Http\Controllers\IndexController@conversationsuscribe                     |            |
+|        | GET|HEAD | conversation/{id}                      |                                   | App\Http\Controllers\IndexController@conversation                             |            |
+|        | GET|HEAD | conversations                          |                                   | App\Http\Controllers\IndexController@conversations                            |            |
+|        | GET|HEAD | credits                                |                                   | App\Http\Controllers\IndexController@careers_with_page                        |            |
+|        | GET|HEAD | install                                | LaravelInstaller::welcome         | RachidLaasri\LaravelInstaller\Controllers\WelcomeController@welcome           | canInstall |
+|        | GET|HEAD | install/database                       | LaravelInstaller::database        | RachidLaasri\LaravelInstaller\Controllers\DatabaseController@database         | canInstall |
+|        | GET|HEAD | install/environment                    | LaravelInstaller::environment     | RachidLaasri\LaravelInstaller\Controllers\EnvironmentController@environment   | canInstall |
+|        | POST     | install/environment/save               | LaravelInstaller::environmentSave | RachidLaasri\LaravelInstaller\Controllers\EnvironmentController@save          | canInstall |
+|        | GET|HEAD | install/final                          | LaravelInstaller::final           | RachidLaasri\LaravelInstaller\Controllers\FinalController@finish              | canInstall |
+|        | GET|HEAD | install/permissions                    | LaravelInstaller::permissions     | RachidLaasri\LaravelInstaller\Controllers\PermissionsController@permissions   | canInstall |
+|        | GET|HEAD | install/requirements                   | LaravelInstaller::requirements    | RachidLaasri\LaravelInstaller\Controllers\RequirementsController@requirements | canInstall |
+|        | GET|HEAD | login                                  |                                   | App\Http\Controllers\IndexController@login                                    |            |
+|        | POST     | login                                  |                                   | App\Http\Controllers\IndexController@postLogin                                |            |
+|        | GET|HEAD | logout                                 |                                   | App\Http\Controllers\IndexController@logout                                   |            |
+|        | GET|HEAD | privacy-policy                         |                                   | App\Http\Controllers\IndexController@privacy_policy_page                      |            |
+|        | GET|HEAD | profile                                |                                   | App\Http\Controllers\IndexController@profile                                  |            |
+|        | GET|HEAD | properties                             |                                   | App\Http\Controllers\PropertiesController@index                               |            |
+|        | GET|HEAD | properties/{slug}                      |                                   | App\Http\Controllers\PropertiesController@propertysingle                      |            |
+|        | POST     | register                               |                                   | App\Http\Controllers\IndexController@postRegister                             |            |
+|        | GET|HEAD | register                               |                                   | App\Http\Controllers\IndexController@register                                 |            |
+|        | GET|HEAD | rent                                   |                                   | App\Http\Controllers\PropertiesController@rentproperties                      |            |
+|        | GET|HEAD | sale                                   |                                   | App\Http\Controllers\PropertiesController@saleproperties                      |            |
+|        | POST     | search                                 |                                   | App\Http\Controllers\PropertiesController@searchkeywordproperties             |            |
+|        | POST     | searchproperties                       |                                   | App\Http\Controllers\PropertiesController@searchproperties                    |            |
+|        | GET|HEAD | store                                  |                                   | App\Http\Controllers\StoreController@view_all                                 |            |
+|        | GET|HEAD | store/buy/{id}                         |                                   | App\Http\Controllers\StoreController@buy                                      |            |
+|        | GET|HEAD | store/{id}                             |                                   | App\Http\Controllers\StoreController@view_one                                 |            |
+|        | POST     | subscribe                              |                                   | App\Http\Controllers\IndexController@subscribe                                |            |
+|        | GET|HEAD | terms-conditions                       |                                   | App\Http\Controllers\IndexController@terms_conditions_page                    |            |
+|        | GET|HEAD | transactions                           |                                   | App\Http\Controllers\IndexController@transactions                             |            |
+|        | GET|HEAD | type/{slug}                            |                                   | App\Http\Controllers\PropertiesController@propertiesbytype                    |            |
+|        | GET|HEAD | verificar                              |                                   | App\Http\Controllers\StoreController@verificar                                |            |
+|        | GET|HEAD | verificar-transacciones                |                                   | App\Http\Controllers\IndexController@verificarTransacciones                   |            |
++--------+----------+----------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+------------+

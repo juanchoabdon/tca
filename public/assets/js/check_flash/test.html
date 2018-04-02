@@ -1,0 +1,17 @@
+<!doctype html>
+<head>
+<title>Detect Flash Player</title>
+<script>
+  var hayFlash = function(a,b){try{a=new ActiveXObject(a+b+'.'+a+b)}catch(e){a=navigator.plugins[a+' '+b]}return!!a}('Shockwave','Flash')
+
+  if(hayFlash) {
+    alert("Flash Player is installed");
+  }
+  else {
+    alert("Your browser doesn't have Flash Player installed");
+  }
+</script>
+</head>
+<body>
+</body>
+</html>

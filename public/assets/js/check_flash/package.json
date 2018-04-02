@@ -1,0 +1,12 @@
+{
+  "name": "hayFlash",
+
+  "description": "Detect if Flash Player is installed in your browser",
+
+  "keywords": [
+    "detect",
+    "flash",
+    "player",
+    "browser"
+  ]
+}

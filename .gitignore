@@ -1,0 +1,4 @@
+/vendor
+/public/upload
+#.env
+/storage/debugbar

@@ -1,0 +1,86 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "swfobject@^2.2.1",
+        "scope": null,
+        "escapedName": "swfobject",
+        "name": "swfobject",
+        "rawSpec": "^2.2.1",
+        "spec": ">=2.2.1 <3.0.0",
+        "type": "range"
+      },
+      "/Users/diro7/Documents/node_modules/detect-flash"
+    ]
+  ],
+  "_from": "swfobject@>=2.2.1 <3.0.0",
+  "_id": "swfobject@2.2.1",
+  "_inCache": true,
+  "_location": "/swfobject",
+  "_npmUser": {
+    "name": "V1",
+    "email": "info@3rd-Eden.com"
+  },
+  "_npmVersion": "1.4.28",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "swfobject@^2.2.1",
+    "scope": null,
+    "escapedName": "swfobject",
+    "name": "swfobject",
+    "rawSpec": "^2.2.1",
+    "spec": ">=2.2.1 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/detect-flash"
+  ],
+  "_resolved": "https://registry.npmjs.org/swfobject/-/swfobject-2.2.1.tgz",
+  "_shasum": "e55451d5dde59657335c86b01732c61a923293e2",
+  "_shrinkwrap": null,
+  "_spec": "swfobject@^2.2.1",
+  "_where": "/Users/diro7/Documents/node_modules/detect-flash",
+  "author": {
+    "name": "Arnout Kazemier"
+  },
+  "bugs": {
+    "url": "https://github.com/unshiftio/swfobject/issues"
+  },
+  "dependencies": {},
+  "description": "SWFObject is an easy-to-use and standards-friendly method to embed Flash content, which utilizes one small JavaScript file",
+  "devDependencies": {
+    "active-x-obfuscator": "0.0.x"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "e55451d5dde59657335c86b01732c61a923293e2",
+    "tarball": "https://registry.npmjs.org/swfobject/-/swfobject-2.2.1.tgz"
+  },
+  "gitHead": "441e413ddf6da40652a82db7d9d2270161f9d5e6",
+  "homepage": "https://github.com/unshiftio/swfobject",
+  "keywords": [
+    "SWFObject",
+    "swf",
+    "object",
+    "flash",
+    "embed",
+    "content"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "V1",
+      "email": "info@3rd-Eden.com"
+    }
+  ],
+  "name": "swfobject",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unshiftio/swfobject.git"
+  },
+  "scripts": {},
+  "version": "2.2.1"
+}
